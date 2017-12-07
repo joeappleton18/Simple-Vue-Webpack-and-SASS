@@ -14,10 +14,10 @@ I created this project out of necessity when teaching a front end web developmen
 
 
 - This project depends on node version 6 or higher. 
-- On a personal computer the version of node can should be determined by running `node –v`.
+- On a personal computer the version of node should be determined by running `node –v`.
   [If the version is lower than 6, then update node & npm before you progress]( https://docs.npmjs.com/getting-started/installing-node)
 
-- If cloud9 is being used as a learning tool, the following commands must be run in order to update to the latest version of node:
+- If cloud9 is being used as a learning tool/development environment, the following commands must be run in order to update to the latest version of node:
   - `nvm install 6`
   - `nvm alias default 6` 
 
