@@ -1,4 +1,4 @@
-# Vue Webpack and SASS
+# Vue, Webpack and SASS
 
 A Vue 2.0 Webpack & vue-loader set up to support a simple SASS and vue workflow. 
 
