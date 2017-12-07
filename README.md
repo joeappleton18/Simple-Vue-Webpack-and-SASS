@@ -9,7 +9,7 @@ This project can be used as a starting point if you wish to use vue.js to enhanc
 I created this project out of necessity when teaching a front end web development course. I needed the students to adopt a simple front end workflow when developing simple multi page HTML websites. 
 
 ## Running the project 
-- Clone this repository repository 
+- Clone this repository repository `git clone https://github.com/joeappleton18/Simple-Vue-Webpack-and-SASS.git`
 - Using terminal in the root directory of the project run:
 - `npm install`  : install the dependencies 
 - `npm run watch`: will run webpack continuously 
