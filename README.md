@@ -8,6 +8,21 @@ This project can be used as a starting point if you wish to use vue.js to enhanc
 
 I created this project out of necessity when teaching a front end web development course. I needed the students to adopt a simple front end workflow when developing simple multi page HTML websites. 
 
+
+##  Enviorment configuration 
+
+
+
+- This project depends on node version 6 or higher. 
+- On a personal computer the version of node can should be determined by running `node –v`.
+  [If the version is lower than 6, then update node & npm before you progress]( https://docs.npmjs.com/getting-started/installing-node)
+
+- If cloud9 is being used as a learning tool, the following commands must be run in order to update to the latest version of node:
+  - `nvm install 6`
+  - `nvm alias default 6` 
+
+
+
 ## Running the project 
 - Clone this repository repository `git clone https://github.com/joeappleton18/Simple-Vue-Webpack-and-SASS.git`
 - Using terminal in the root directory of the project run:
