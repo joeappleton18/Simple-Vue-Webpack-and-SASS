@@ -26,7 +26,7 @@ project bundle. There is no need to edit anything inside the dist folder.
 
 - Each time you create a new HTML file you will need to import it in `main.js`
 
-``import '../index.html';``
+  e.g. ``import '../index.html';``
 
 - Ensure the `<script src="bundle.js"></script>` is included above the `<body>` tag in the HTML page.
 
