@@ -13,20 +13,25 @@ module.exports = {
 
     plugins: [
         new CopyWebpackPlugin([
-            {from: 'src/images', to: 'images'},
+            { from: 'src/images', to: 'images' },
             //{from: 'src/fonts', to:  'fonts'}
         ]),
         new CleanWebpackPlugin(['dist'])
     ],
     module: {
-        rules: [
-            {
+        rules: [{
                 test: /\.css$/,
                 use: [
                     'vue-style-loader',
                     'css-loader',
                     'postcss-loader',
                 ]
+            },
+
+            {
+                test: /\.js$/,
+                loader: 'babel-loader',
+                exclude: /node_modules/
             },
 
             {
@@ -43,7 +48,7 @@ module.exports = {
                 test: /\.(html|html)$/,
                 loader: 'file-loader',
                 options: {
-                    name:'[name].[ext]'
+                    name: '[name].[ext]'
                 }
 
             },
