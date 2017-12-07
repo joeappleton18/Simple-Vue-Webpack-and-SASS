@@ -6,9 +6,3 @@ module.exports = {
         "autoprefixer": {}
     }
 }
-
-/*module.exports = {
-    plugins: [
-        require('autoprefixer')
-    ]
-}*/

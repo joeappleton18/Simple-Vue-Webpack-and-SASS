@@ -13,8 +13,8 @@ module.exports = {
 
     plugins: [
         new CopyWebpackPlugin([
-            {from: 'src/images', to: 'images'}
-            //{from: './src/**/*.html', to:  path.resolve(__dirname, 'dist/'), flatten: true}*/
+            {from: 'src/images', to: 'images'},
+            //{from: 'src/fonts', to:  'fonts'}
         ]),
         new CleanWebpackPlugin(['dist'])
     ],
