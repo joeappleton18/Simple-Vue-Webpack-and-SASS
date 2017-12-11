@@ -6,7 +6,7 @@
   "scripts": {
     "watch": "webpack --watch",
     "prod": "NODE_ENV=production webpack",
-    "prodSafe": "webpack -p" //Creates a working production file if prod does not work
+    "prodSafe": "webpack -p"
   },
   "browserslist": [
     "> 1%",
