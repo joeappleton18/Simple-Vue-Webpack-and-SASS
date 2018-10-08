@@ -9,7 +9,7 @@ This project can be used as a starting point if you wish to use vue.js to enhanc
 I created this project out of necessity when teaching a front end web development course. I needed the students to adopt a simple front end workflow when developing simple multi page HTML websites. 
 
 
-##  Enviorment configuration 
+##  Environment configuration 
 
 
 
@@ -25,12 +25,12 @@ I created this project out of necessity when teaching a front end web developmen
 
 ## Running the project 
 - Clone this repository repository `git clone https://github.com/joeappleton18/Simple-Vue-Webpack-and-SASS.git`
-- Using terminal in the root directory of the project run:
+- Using terminal,  within the root directory of the project run:
 - `npm install`  : install the dependencies 
 - `npm run watch`: will run webpack continuously 
 
 - The build will be output to the `dist` folder every time you update a file that's part of the 
-project bundle. There is no need to edit anything inside the dist folder. 
+project bundle. Never edit anything in the dev folder. 
 
 ### Deploying the project 
 
@@ -43,12 +43,12 @@ project bundle. There is no need to edit anything inside the dist folder.
 
   e.g. ``import '../index.html';``
 
-- Ensure the `<script src="bundle.js"></script>` is included above the `<body>` tag in the HTML page.
+- Ensure the `<script src="bundle.js"></script>` tag is included above the `</body>` tag in the HTML page.
 
 
 ## Configuration (webpack.config.js)
 
-- The project works out of the box however it is expected that you will extend it.  
+- The project works out of the box, however it is expected that you will extend it.  
 
 ### Copying assets to the dist folder 
 

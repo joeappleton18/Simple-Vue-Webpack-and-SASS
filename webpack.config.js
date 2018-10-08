@@ -1,49 +1,30 @@
-const path = require('path');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+var path = require("path");
+var CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const FileWatcherPlugin = require('file-watcher-webpack-plugin');
-const webpack = require('webpack');
+var VueLoader = require("vue-loader");
+
 
 module.exports = {
+
+    devtool: "sourcemaps",
+
     entry: './src/js/main.js',
     output: {
-        filename: 'bundle.js',
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, "dist"),
+        filename: "bundle.js",
+        publicPath: "dist"
+
     },
 
-    plugins: [
-        new CopyWebpackPlugin([
-            { from: 'src/images', to: 'images' },
-            //{from: 'src/fonts', to:  'fonts'}
-        ]),
-        new CleanWebpackPlugin(['dist'])
-    ],
     module: {
-        rules: [{
-                test: /\.css$/,
-                use: [
-                    'vue-style-loader',
-                    'css-loader',
-                    'postcss-loader',
-                ]
-            },
-
+        rules: [
             {
                 test: /\.js$/,
-                loader: 'babel-loader',
-                exclude: /node_modules/
+                use: {
+                    loader: "babel-loader",
+                    options: {presets: ["es2015"]}
+                }
             },
-
-            {
-                test: /\.scss$/,
-                use: [
-                    'vue-style-loader',
-                    'css-loader',
-                    'postcss-loader',
-                    'sass-loader'
-                ]
-            },
-
             {
                 test: /\.(html|html)$/,
                 loader: 'file-loader',
@@ -52,15 +33,35 @@ module.exports = {
                 }
 
             },
-
+            {
+                test: /\.scss$/,
+                use: [
+                    {
+                        loader: "vue-style-loader"
+                    },
+                    {
+                        loader: "css-loader?sourceMap"
+                    },
+                    {
+                        loader: "sass-loader?sourceMap"
+                    }
+                ]
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    {
+                        loader: "vue-style-loader"
+                    },
+                    {
+                        loader: "css-loader?sourceMap"
+                    }
+                ]
+            },
             {
                 test: /\.vue$/,
-                loader: 'vue-loader',
-                options: {
-                    loaders: {}
-                }
-            },
-
+                loader: 'vue-loader'
+            }
         ],
     },
 
@@ -71,24 +72,17 @@ module.exports = {
         extensions: ['*', '.js', '.vue', '.json']
 
     },
-    devtool: '#eval-source-map'
-};
 
-if (process.env.NODE_ENV === 'production') {
-    module.exports.plugins = (module.exports.plugins).concat([
-        new webpack.DefinePlugin({
-            'process.env': {
-                NODE_ENV: '"production"'
-            }
-        }),
-        new webpack.optimize.UglifyJsPlugin({
-            sourceMap: true,
-            compress: {
-                warnings: false
-            }
-        }),
-        new webpack.LoaderOptionsPlugin({
-            minimize: true
-        })
-    ])
+    plugins: [
+        new VueLoader.VueLoaderPlugin(),
+        new CleanWebpackPlugin(['dist']),
+        new CopyWebpackPlugin([
+            {from: 'src/images', to: 'images'},
+            //add to this array for further static assets e.g. {from: 'src/fonts', to:  'fonts'}
+        ]),
+    ]
+
+
 }
+
+
