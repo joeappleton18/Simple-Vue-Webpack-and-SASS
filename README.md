@@ -1,6 +1,6 @@
 # Vue, Webpack 4 and SASS
 
-This project can be used as a starting point if you wish to use vue.js to enhance a simple static HTML web project. It will allow you to create a few choice vue.js components and use them to add dynamic features to an otherwise static HTML website.
+This project can be used as a starting point if you wish to use vue.js to enhance a simple static HTML website. It will allow you to create a few choice vue.js components and use them to add dynamic features to an otherwise static HTML pages. What's more, it will also support SASS compilation. 
 
 I created this project out of necessity when teaching a front end web development course. I needed the students to adopt a simple front end workflow when developing simple multi page HTML websites. Most of the starter Webpack projects I encountered were geared towards single page web applications. 
 
