@@ -17,12 +17,11 @@ module.exports = {
     },
 
     module: {
-        rules: [
-            {
+        rules: [{
                 test: /\.js$/,
                 use: {
                     loader: "babel-loader",
-                    options: {presets: ["es2015"]}
+                    options: { presets: ["es2015"] }
                 }
             },
             {
@@ -35,8 +34,7 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                use: [
-                    {
+                use: [{
                         loader: "vue-style-loader"
                     },
                     {
@@ -47,10 +45,25 @@ module.exports = {
                     }
                 ]
             },
+
+            {
+                test: /\.(gif|png|jpe?g|svg)$/i,
+                use: [
+                    'file-loader',
+                    {
+                        loader: 'image-webpack-loader',
+                        options: {
+                            bypassOnDebug: true, // webpack@1.x
+                            disable: true, // webpack@2.x and newer
+                        },
+                    },
+                ],
+            },
+
+
             {
                 test: /\.css$/,
-                use: [
-                    {
+                use: [{
                         loader: "vue-style-loader"
                     },
                     {
@@ -77,12 +90,10 @@ module.exports = {
         new VueLoader.VueLoaderPlugin(),
         new CleanWebpackPlugin(['dist']),
         new CopyWebpackPlugin([
-            {from: 'src/images', to: 'images'},
+            { from: 'src/images', to: 'images' },
             //add to this array for further static assets e.g. {from: 'src/fonts', to:  'fonts'}
         ]),
     ]
 
 
 }
-
-
